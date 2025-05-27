@@ -6,58 +6,53 @@ public class Main {
         int clientOS = 1;
         if (clientOS == 0) {
             System.out.println("Установите версию приложения для iOS по ссылке");
-        } else if (clientOS == 1) {
-            System.out.println("Установите версию приложения для Android по ссылке");
+        } else {
+            if (clientOS == 1)
+                System.out.println("Установите версию приложения для Android по ссылке");
         }
 
         System.out.println("Задача 2");
 
-        int clientOS1 = 1;
-        int clientDeviseYear = 2014;
-        if (clientOS1 == 0) {
-            if (clientDeviseYear >= 2015) {
-                System.out.println("Установите версию приложения для iOS по ссылке");
-            } else {
-                System.out.println("Установите обновленную версию приложения для iOS по ссылке");
+        int clientDeviceYear = 2015;
+        if (clientDeviceYear < 2015) {
+            if (clientOS == 0) {
+                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+            } else if (clientOS == 1) {
+                System.out.println("Установите облегченную версию приложения для Android по ссылке");
             }
-        }
-        if (clientOS1 == 1) {
-            if (clientDeviseYear >= 2015) {
+        } else {
+            if (clientOS == 0) {
+                System.out.println("Установите версию приложения для iOS по ссылке");
+            } else if (clientOS == 1) {
                 System.out.println("Установите версию приложения для Android по ссылке");
-            } else {
-                System.out.println("Установите обновленную версию приложения для Android по ссылке");
             }
         }
 
         System.out.println("Задача 3");
 
-        int year = 1684;
-        if (year < 1584) {
-            System.out.println("Високосный год еще не введен");
+        int year = 2400;
+        if (year > 1584 && ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)) {
+            System.out.println(year + " год является високосным");
         } else {
-            boolean year1 = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
-            if (year1) {
-                System.out.println(year + " год является високосным");
-            } else {
-                System.out.println(year + " год не является високосным");
-            }
+            System.out.println(year + " год не является високосным");
         }
 
         System.out.println("Задача 4");
-        int deliveryDistance = 100;
-        if (deliveryDistance < 20) {
-            System.out.println("Потребуется дней: 1");
-        } else if (deliveryDistance >= 20 && deliveryDistance < 60) {
-            System.out.println("Потребуется дней: 2");
-        } else if (deliveryDistance >= 60 && deliveryDistance < 100) {
-            System.out.println("Потребуется дней: 3");
+
+        int deliveryDistance = 95;
+        if (deliveryDistance <= 20) {
+            System.out.println("Потребуется дней " + 1);
+        } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
+            System.out.println("Потребуется дней " + 2);
+        } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
+            System.out.println("Потребуется дней " + 3);
         } else {
-            System.out.println("Доставка не доставляется");
+            System.out.println("Доставки нет");
         }
 
         System.out.println("Задача 5");
 
-        int monthNumber = 13;
+        int monthNumber = 14;
         switch (monthNumber) {
             case 12:
             case 1:
@@ -79,9 +74,12 @@ public class Main {
             case 11:
                 System.out.println("Осень");
                 break;
-        }
-            if (monthNumber > 12){
-                System.out.println("Программа не выполняется");
-            }
+            default:
+                System.out.println("Такого месяца не существует");
         }
     }
+}
+
+
+
+
